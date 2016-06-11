@@ -14,4 +14,24 @@
         <url-pattern>/welcome</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Change</servlet-name>
+        <servlet-class>com.max.servlet.ChangeContact</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Change</servlet-name>
+        <url-pattern>/change</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Create</servlet-name>
+        <servlet-class>com.max.servlet.CreateContact</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Create</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
 </web-app>
