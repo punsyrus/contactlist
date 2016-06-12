@@ -1,4 +1,5 @@
 <%@ page import="java.util.*" %>
+
 <html>
 <head>
     <title>Change contact</title>
@@ -13,7 +14,7 @@
     while(it.hasNext()) {
         Object tmpit = it.next();
         out.print("<br>" + tmpit);
-        out.print("<br> <input type=\"TEXT\">");
+        out.print("<br> <input type=\"TEXT\" id=\"" + tmpit + ">");
     }
 
 %>

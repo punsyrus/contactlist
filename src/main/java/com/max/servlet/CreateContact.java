@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import com.max.servlet.model.CreateContDb;
 
 public class CreateContact extends HttpServlet {
 
@@ -23,7 +24,18 @@ public class CreateContact extends HttpServlet {
         result.add("TelNum");
         result.add("Address");
         req.setAttribute("name", result);
-        req.getRequestDispatcher("create.jsp").forward(req, resp);
+        req.getRequestDispatcher("createjsp.jsp").forward(req, resp);
 
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        CreateContDb ccd = new CreateContDb();
+        ccd.setContacts(
+                (String) req.getAttribute("First name"),
+                (String) req.getAttribute("Last Name"),
+                (String) req.getAttribute("Email"),
+                (String) req.getAttribute("Address"),
+                (String) req.getAttribute("TelNum"));
     }
 }

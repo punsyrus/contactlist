@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Enter new data about contact:</h1>
-<form action="/welcome">
+<form method="POST" action="/create">
     <%
         List contact = (List)request.getAttribute("name");
         Iterator it = contact.iterator();
@@ -13,7 +13,7 @@
         while(it.hasNext()) {
             Object tmpit = it.next();
             out.print("<br>" + tmpit);
-            out.print("<br> <input type=\"TEXT\">");
+            out.print("<br> <input type=\"TEXT\" required name=\"" + tmpit + "\">");
         }
 
     %>
