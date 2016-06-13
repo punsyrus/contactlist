@@ -9,16 +9,12 @@
 <form action="/welcome">
 <%
     List contact = (List)request.getAttribute("name");
-    Iterator it = contact.iterator();
-
-    while(it.hasNext()) {
-        Object tmpit = it.next();
+    for (Object tmpit : contact) {
         out.print("<br>" + tmpit);
-        out.print("<br> <input type=\"TEXT\" id=\"" + tmpit + ">");
+        out.print("<br> <input type=\"TEXT\" required name=\"" + tmpit + "\">\n");
     }
-
 %>
-    <br><input type="SUBMIT">
+<br><input type="SUBMIT">
 </form>
 <br>
 <form>
